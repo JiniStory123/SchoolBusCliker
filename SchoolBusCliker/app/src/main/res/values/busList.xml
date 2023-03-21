@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bus">
+        <item>등교버스1번</item>
+        <item>등교버스2번</item>
+        <item>등교버스3번</item>
+        <item>하교버스1번</item>
+        <item>하교버스2번</item>
+        <item>하교버스3번</item>
+    </string-array>
+</resources>
