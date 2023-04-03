@@ -1,0 +1,63 @@
+package com.cafe24.as8794.busdriver;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+public class GoSchoolFragment extends Fragment
+{
+
+    BusListActivity main;
+    String userID, userPass, userName, email, tel, address;
+    Button bt_D1, bt_D2, bt_D3, bt_D4, bt_D5, bt_D6, bt_D7;
+
+    public GoSchoolFragment()
+    {
+        super();
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context)
+    {
+        super.onAttach(context);
+        main = (BusListActivity) context;
+    }
+
+    @Override
+    public void onDetach()
+    {
+        super.onDetach();
+        main = null;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
+        View view = inflater.inflate(R.layout.activity_go_school_fragment, container, false);
+
+        bt_D1 = view.findViewById(R.id.bt_D1);
+        bt_D2 = view.findViewById(R.id.bt_D2);
+        bt_D3 = view.findViewById(R.id.bt_D3);
+        bt_D4 = view.findViewById(R.id.bt_D4);
+        bt_D5 = view.findViewById(R.id.bt_D5);
+        bt_D6 = view.findViewById(R.id.bt_D6);
+        bt_D7 = view.findViewById(R.id.bt_D7);
+
+        return view;
+    }
+}
