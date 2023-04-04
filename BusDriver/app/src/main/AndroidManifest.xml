@@ -20,6 +20,9 @@
         tools:replace="android:appComponentFactory"
         tools:targetApi="31">
         <activity
+            android:name=".BusStopInformationActivity"
+            android:exported="false" />
+        <activity
             android:name=".GoSchoolFragment"
             android:exported="false" />
         <activity

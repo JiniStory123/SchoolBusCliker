@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity
 {
     EditText et_id, et_pw;
     Button bt_login;
+    String userID, userPass, userName, email, tel, address;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
