@@ -689,7 +689,7 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
                     marker_D3[j].setMap(naverMap);
                 }
 
-                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.4554, 127.4283), 11).animate(CameraAnimation.Fly, 1000);;
+                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.39367915368546, 127.39002988767785), 11).animate(CameraAnimation.Fly, 1000);;
                 naverMap.moveCamera(cameraUpdate);
                 break;
 
@@ -697,7 +697,8 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
 
             case "등교버스4번" :
                 path.setCoords(Arrays.asList(
-                       new LatLng(36.5135, 127.2591),
+                        new LatLng(36.5179, 127.2588),
+                        new LatLng(36.5135, 127.2591),
                         new LatLng(36.5121, 127.2595),
                         new LatLng(36.5112, 127.26),
                         new LatLng(36.5098, 127.2609),
@@ -808,7 +809,7 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
                     marker_D4[j].setMap(naverMap);
                 }
 
-                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.5135, 127.2591), 11).animate(CameraAnimation.Fly, 1000);;
+                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.421107304385735, 127.30792121665856), 10).animate(CameraAnimation.Fly, 1000);;
                 naverMap.moveCamera(cameraUpdate);
                 break;
 
@@ -941,7 +942,7 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
                     marker_D5[j].setMap(naverMap);
                 }
 
-                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.2824, 127.2393), 11).animate(CameraAnimation.Fly, 1000);;
+                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.2852168468278, 127.29073436187491), 11).animate(CameraAnimation.Fly, 1000);;
                 naverMap.moveCamera(cameraUpdate);
                 break;
 

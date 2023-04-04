@@ -10,6 +10,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -225,6 +226,7 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                         naverMap.moveCamera(cameraUpdate);
 
                         BusLocation(latitude, longitude);
+                        BusStopData();
                     }
 
                     public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -392,8 +394,80 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 }
 
             default:
+                // 임시로
+                tv_nowBusStop.setText("벗어난상태");
+                tv_nextBusStop.setText("벗어난상태");
                 break;
         }
+    }
+
+    // 위치에 따른 데이터 불러오기
+    void BusStopData()
+    {
+        String serverUrl = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city.php";
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, serverUrl, null, new Response.Listener<JSONArray>()
+        {
+            @Override
+            public void onResponse(JSONArray response)
+            {
+                try
+                {
+                    int int_start = 0;
+                    int int_end = 0;
+                    for (int i = 0; i < response.length(); i++)
+                    {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        String number = jsonObject.getString("busNumber");
+                        String start = jsonObject.getString("start");
+                        String end = jsonObject.getString("end");
+
+                        if(busNumber.equals(number))
+                        {
+                            if(tv_nowBusStop.getText().equals(start))
+                            {
+                                int_start++;
+                            }
+
+                            if(tv_nowBusStop.getText().equals(end))
+                            {
+                                int_end++;
+                            }
+                        }
+
+                        if (int_start == 0 && int_end == 0)
+                        {
+                            tv_busStopInformation.setTextColor(Color.BLACK);
+                            tv_busStopInformation.setText("승하차 인원이 없어요");
+                        }
+                        else
+                        {
+                            tv_busStopInformation.setTextColor(Color.RED);
+                            tv_busStopInformation.setText("승하차 인원이 있어요!");
+                        }
+
+                        tv_busIn.setText(int_start + "");
+                        tv_busOut.setText(int_end + "");
+                        System.out.println();
+                    }
+                }
+                catch (JSONException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error)
+            {
+
+            }
+        });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        requestQueue.add(jsonArrayRequest);
     }
 
     // 버스 번호 선택시 정류장 경로 그리기

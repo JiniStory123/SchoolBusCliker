@@ -226,41 +226,68 @@ public class BusReservation_D_BusStop extends AppCompatActivity
 
         }
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, URL, null, new Response.Listener<JSONArray>()
+        if (!(busNumber.equals("테스트1번") || busNumber.equals("테스트2번")))
         {
-            @Override
-            public void onResponse(JSONArray response)
+            JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, URL, null, new Response.Listener<JSONArray>()
             {
-                try
+                @Override
+                public void onResponse(JSONArray response)
                 {
-                    for (int i = 0; i < response.length(); i++)
+                    try
                     {
-                        JSONObject jsonObject = response.getJSONObject(i);
-                        String busStop = jsonObject.getString("busStop");
-                        String time = jsonObject.getString("time");
+                        for (int i = 0; i < response.length(); i++)
+                        {
+                            JSONObject jsonObject = response.getJSONObject(i);
+                            String busStop = jsonObject.getString("busStop");
+                            String time = jsonObject.getString("time");
 
-                        str_BusStop[i] = busStop + "";
-                        str_BusStop_Time[i] = time + "";
-                        int_busStopCount++;
+                            str_BusStop[i] = busStop + "";
+                            str_BusStop_Time[i] = time + "";
+                            int_busStopCount++;
+                        }
+                    }
+                    catch (JSONException e)
+                    {
+                        e.printStackTrace();
                     }
                 }
-                catch (JSONException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener()
-        {
-            @Override
-            public void onErrorResponse(VolleyError error)
+            }, new Response.ErrorListener()
             {
-                Toast.makeText(getApplicationContext(), "에러", Toast.LENGTH_SHORT).show();
-            }
-        });
+                @Override
+                public void onErrorResponse(VolleyError error)
+                {
+                    Toast.makeText(getApplicationContext(), "에러", Toast.LENGTH_SHORT).show();
+                }
+            });
 
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        requestQueue.add(jsonArrayRequest);
+            requestQueue.add(jsonArrayRequest);
+        }
+
+        if (busNumber.equals("테스트1번"))
+        {
+            str_BusStop[0] = "동신빌라";
+            str_BusStop_Time[0] = "12:00";
+            str_BusStop[1] = "정림초등학교";
+            str_BusStop_Time[1] = "12:00";
+            str_BusStop[2] = "정림삼거리";
+            str_BusStop_Time[2] = "12:00";
+            int_busStopCount = 4;
+        }
+
+        if(busNumber.equals("테스트2번"))
+        {
+            str_BusStop[0] = "목원대학교입구";
+            str_BusStop_Time[0] = "12:00";
+            str_BusStop[1] = "중앙로터리";
+            str_BusStop_Time[1] = "12:00";
+            str_BusStop[2] = "중앙도서관";
+            str_BusStop_Time[2] = "12:00";
+            str_BusStop[3] = "공과대학";
+            str_BusStop_Time[3] = "12:00";
+            int_busStopCount = 5;
+        }
     }
 
     @Override

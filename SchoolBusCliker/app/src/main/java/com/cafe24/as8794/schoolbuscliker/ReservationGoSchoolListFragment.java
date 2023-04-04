@@ -24,6 +24,8 @@ public class ReservationGoSchoolListFragment extends Fragment
 
     Button bt_D1, bt_D2, bt_D3, bt_D4, bt_D5, bt_D6, bt_D7;
 
+    Button bt_test1, bt_test2;
+
     public ReservationGoSchoolListFragment()
     {
         super();
@@ -65,6 +67,9 @@ public class ReservationGoSchoolListFragment extends Fragment
         bt_D5 = view.findViewById(R.id.bt_D5);
         bt_D6 = view.findViewById(R.id.bt_D6);
         bt_D7 = view.findViewById(R.id.bt_D7);
+
+        bt_test1 = view.findViewById(R.id.bt_test1);
+        bt_test2 = view.findViewById(R.id.bt_test2);
 
         bt_D1.setOnClickListener(new View.OnClickListener()
         {
@@ -187,6 +192,43 @@ public class ReservationGoSchoolListFragment extends Fragment
                 intent.putExtra("tel", tel);
                 intent.putExtra("address", address);
                 intent.putExtra("busNumber", "등교버스7번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
+
+        bt_test1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), BusReservation_D_Date.class);
+                intent.putExtra("userID", userID);
+                intent.putExtra("userPass", userPass);
+                intent.putExtra("userName", userName);
+                intent.putExtra("email", email);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("busNumber", "테스트1번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
+        bt_test2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), BusReservation_D_Date.class);
+                intent.putExtra("userID", userID);
+                intent.putExtra("userPass", userPass);
+                intent.putExtra("userName", userName);
+                intent.putExtra("email", email);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("busNumber", "테스트2번");
                 startActivity(intent);
                 main.overridePendingTransition(R.anim.horizon, R.anim.none);
             }
