@@ -76,6 +76,12 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
     Marker[] marker_D5;
     Marker[] marker_D6;
     Marker[] marker_D7;
+    Marker[] marker_D8;
+    Marker[] marker_D9;
+    Marker[] marker_D10;
+    Marker[] marker_D11;
+    Marker[] marker_D12;
+
     boolean isLocation;
 
     public SearchBusStopFragment()
@@ -188,7 +194,31 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
         {
             marker_D7[i] = new Marker();
         }
-
+        marker_D8 = new Marker[12];
+        for (int i=0; i<marker_D8.length; i++)
+        {
+            marker_D8[i] = new Marker();
+        }
+        marker_D9 = new Marker[13];
+        for (int i=0; i<marker_D9.length; i++)
+        {
+            marker_D9[i] = new Marker();
+        }
+        marker_D10 = new Marker[12];
+        for (int i=0; i<marker_D10.length; i++)
+        {
+            marker_D10[i] = new Marker();
+        }
+        marker_D11 = new Marker[13];
+        for (int i=0; i<marker_D11.length; i++)
+        {
+            marker_D11[i] = new Marker();
+        }
+        marker_D12 = new Marker[12];
+        for (int i=0; i<marker_D12.length; i++)
+        {
+            marker_D12[i] = new Marker();
+        }
         // 경로 그리기
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -286,6 +316,28 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
         {
             marker_D7[j].setMap(null);
         }
+        for(int j=0; j<marker_D8.length; j++)
+        {
+            marker_D8[j].setMap(null);
+        }
+        for(int j=0; j<marker_D9.length; j++)
+        {
+            marker_D9[j].setMap(null);
+        }
+        for(int j=0; j<marker_D10.length; j++)
+        {
+            marker_D10[j].setMap(null);
+        }
+        for(int j=0; j<marker_D11.length; j++)
+        {
+            marker_D11[j].setMap(null);
+        }
+        for(int j=0; j<marker_D12.length; j++)
+        {
+            marker_D12[j].setMap(null);
+        }
+
+
         path.setWidth(18);
         switch (str_busList[i])
         {
@@ -645,7 +697,7 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
 
             case "등교버스4번" :
                 path.setCoords(Arrays.asList(
-                        new LatLng(36.5135, 127.2591),
+                       new LatLng(36.5135, 127.2591),
                         new LatLng(36.5121, 127.2595),
                         new LatLng(36.5112, 127.26),
                         new LatLng(36.5098, 127.2609),
@@ -711,7 +763,7 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
                         new LatLng(36.3382, 127.3354),
                         new LatLng(36.3382, 127.3382),
                         new LatLng(36.3292, 127.3382)
-                ));
+                        ));
                 path.setColor(0xFFA72B43);
                 path.setMap(naverMap);
 
@@ -1013,6 +1065,610 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
                 cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.3613, 127.356), 11).animate(CameraAnimation.Fly, 1000);;
                 naverMap.moveCamera(cameraUpdate);
                 break;
+            case "하교버스1번" :
+                path.setCoords(Arrays.asList(
+                        new LatLng(36.3273, 127.3374),
+                        new LatLng(36.3274, 127.3382),
+                        new LatLng(36.3276, 127.3383),
+                        new LatLng(36.3286, 127.3381),
+                        new LatLng(36.3291, 127.3381),
+                        new LatLng(36.3321, 127.3382),
+                        new LatLng(36.3321, 127.344),
+                        new LatLng(36.332, 127.3447),
+                        new LatLng(36.332, 127.3479),
+                        new LatLng(36.3186, 127.3478),
+                        new LatLng(36.3176, 127.3479),
+                        new LatLng(36.3172, 127.348),
+                        new LatLng(36.3051, 127.3532),
+                        new LatLng(36.3068, 127.3604),
+                        new LatLng(36.307, 127.3611),
+                        new LatLng(36.3072, 127.363),
+                        new LatLng(36.3073, 127.3636),
+                        new LatLng(36.308, 127.3658),
+                        new LatLng(36.3084, 127.367),
+                        new LatLng(36.3093, 127.3693),
+                        new LatLng(36.3097, 127.3719),
+                        new LatLng(36.3101, 127.3726),
+                        new LatLng(36.3105, 127.3745),
+                        new LatLng(36.3107, 127.3749),
+                        new LatLng(36.3149, 127.3843),
+                        new LatLng(36.3166, 127.3906),
+                        new LatLng(36.3223, 127.4123),
+                        new LatLng(36.3227,127.414),
+                        new LatLng(36.323, 127.4168),
+                        new LatLng(36.3236, 127.418),
+                        new LatLng(36.3262, 127.4214),
+                        new LatLng(36.3273, 127.4214),
+                        new LatLng(36.3311, 127.4326),
+                        new LatLng(36.3217, 127.4378),
+                        new LatLng(36.3132, 127.4411),
+                        new LatLng(36.3126, 127.4415),
+                        new LatLng(36.3116, 127.4432),
+                        new LatLng(36.3116, 127.4437),
+                        new LatLng(36.3118, 127.4449),
+                        new LatLng(36.3118, 127.4454),
+                        new LatLng(36.3112, 127.4472),
+                        new LatLng(36.3109, 127.4483),
+                        new LatLng(36.3107, 127.4485),
+                        new LatLng(36.3097, 127.4492),
+                        new LatLng(36.3066, 127.4514),
+                        new LatLng(36.3025, 127.4556),
+                        new LatLng(36.3015, 127.4568),
+                        new LatLng(36.301, 127.4572),
+                        new LatLng(36.2979, 127.459),
+                        new LatLng(36.2973, 127.4597),
+                        new LatLng(36.2963, 127.4603),
+                        new LatLng(36.296, 127.4603),
+                        new LatLng(36.2958, 127.4604),
+                        new LatLng(36.2927, 127.4623),
+                        new LatLng(36.2901, 127.4632),
+                        new LatLng(36.2892, 127.4632),
+                        new LatLng(36.2883, 127.4643),
+                        new LatLng(36.2872, 127.4648),
+                        new LatLng(36.2858, 127.4652),
+                        new LatLng(36.2839, 127.4662),
+                        new LatLng(36.2817, 127.4673)
+
+                ));
+                path.setColor(0xFFA72B43);
+                path.setMap(naverMap);
+
+                marker_D8[0].setPosition(new LatLng(36.3272, 127.3376));
+                marker_D8[0].setCaptionText("신학대학주차장");
+                marker_D8[1].setPosition(new LatLng( 36.3052, 127.3538));
+                marker_D8[1].setCaptionText("가수원네거리");
+                marker_D8[2].setPosition(new LatLng(36.3073, 127.364));
+                marker_D8[2].setCaptionText("정림동 반도패션");
+                marker_D8[3].setPosition(new LatLng(36.3118, 127.3775));
+                marker_D8[3].setCaptionText("도마동 유가옥설렁탕");
+                marker_D8[4].setPosition(new LatLng(36.3159, 127.388));
+                marker_D8[4].setCaptionText("버드내 육교밑");
+                marker_D8[5].setPosition(new LatLng(36.3184, 127.3979));
+                marker_D8[5].setCaptionText("유천동 국민은행");
+                marker_D8[6].setPosition(new LatLng(36.3215, 127.4096));
+                marker_D8[6].setCaptionText("기독교 봉사회관");
+                marker_D8[7].setPosition(new LatLng(36.3244, 127.4191));
+                marker_D8[7].setCaptionText("중구청 2번 출구");
+                marker_D8[8].setPosition(new LatLng(36.3305, 127.431));
+                marker_D8[8].setCaptionText("정동 다비치안경");
+                marker_D8[9].setPosition(new LatLng(36.318, 127.4394));
+                marker_D8[9].setCaptionText("효동 현대");
+                marker_D8[10].setPosition(new LatLng(36.3015, 127.4567));
+                marker_D8[10].setCaptionText("은어송초등학교 건너");
+                marker_D8[11].setPosition(new LatLng(36.2817, 127.4673));
+                marker_D8[11].setCaptionText("산내소방서");
+
+
+                for(int j=0; j< marker_D8.length; j++)
+                {
+                    marker_D8[j].setWidth(80);
+                    marker_D8[j].setHeight(110);
+                    marker_D8[j].setMap(naverMap);
+                }
+
+                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.3272, 127.3376), 11).animate(CameraAnimation.Fly, 1000);;
+                naverMap.moveCamera(cameraUpdate);
+                break;
+            case "하교버스2번" :
+                path.setCoords(Arrays.asList(
+                        new LatLng(36.3273, 127.3374),
+                        new LatLng(36.3274, 127.3382),
+                        new LatLng(36.3276, 127.3383),
+                        new LatLng(36.3286, 127.3381),
+                        new LatLng(36.3291, 127.3381),
+                        new LatLng(36.3273, 127.3374),
+                        new LatLng(36.3274, 127.3382),
+                        new LatLng(36.3276, 127.3383),
+                        new LatLng(36.3286, 127.3381),
+                        new LatLng(36.3291, 127.3381),
+                        new LatLng(36.3324, 127.3381),
+                        new LatLng(36.3324, 127.3331),
+                        new LatLng(36.334, 127.3332),
+                        new LatLng(36.336, 127.334),
+                        new LatLng(36.3428,127.3396),
+                        new LatLng(36.3458, 127.3405),
+                        new LatLng(36.349, 127.3405),
+                        new LatLng(36.3503, 127.3403),
+                        new LatLng(36.3536, 127.3416),
+                        new LatLng(36.351, 127.3514),
+                        new LatLng(36.3507, 127.353),
+                        new LatLng(36.3505, 127.3539),
+                        new LatLng(36.3519, 127.3557),
+                        new LatLng(36.3525, 127.3562),
+                        new LatLng(36.353, 127.3571),
+                        new LatLng(36.3542, 127.3638),
+                        new LatLng(36.3541, 127.3665),
+                        new LatLng(36.3537, 127.3676),
+                        new LatLng(36.3488, 127.3763),
+                        new LatLng(36.3483, 127.3769),
+                        new LatLng(36.3446, 127.3798),
+                        new LatLng(36.3442, 127.3803),
+                        new LatLng(36.3437, 127.3811),
+                        new LatLng(36.3433, 127.382),
+                        new LatLng(36.3418, 127.3884),
+                        new LatLng(36.3415, 127.3892),
+                        new LatLng(36.3285, 127.4051),
+                        new LatLng(36.329, 127.4065),
+                        new LatLng(36.3292, 127.4074),
+                        new LatLng(36.3294, 127.4083),
+                        new LatLng(36.3304, 127.4095),
+                        new LatLng(36.3363, 127.4158),
+                        new LatLng(36.3423, 127.4234),
+                        new LatLng(36.3434, 127.4266),
+                        new LatLng(36.3453, 127.4295),
+                        new LatLng(36.3472, 127.4319),
+                        new LatLng(36.3475, 127.4324),
+                        new LatLng(36.351, 127.4419),
+                        new LatLng(36.3515, 127.4424),
+                        new LatLng(36.3576, 127.4459),
+                        new LatLng(36.3574, 127.4464),
+                        new LatLng(36.3595, 127.4483),
+                        new LatLng(36.3625, 127.4443),
+                        new LatLng(36.3638,127.4421),
+                        new LatLng(36.3679,127.4364),
+                        new LatLng(36.3682, 127.4351),
+                        new LatLng(36.3675, 127.4309)
+
+                ));
+                path.setColor(0xFFA72B43);
+                path.setMap(naverMap);
+
+                marker_D9[0].setPosition(new LatLng(36.3271, 127.3376));
+                marker_D9[0].setCaptionText("신학대학주차장");
+                marker_D9[1].setPosition(new LatLng( 36.3532, 127.3415));
+                marker_D9[1].setCaptionText("유성온천역 4거리");
+                marker_D9[2].setPosition(new LatLng(36.353,127.3572));
+                marker_D9[2].setCaptionText("선화교회");
+                marker_D9[3].setPosition(new LatLng(36.3541, 127.3633));
+                marker_D9[3].setCaptionText("대전일보 육교 및 버스승강장");
+                marker_D9[4].setPosition(new LatLng(36.3531, 127.3685));
+                marker_D9[4].setCaptionText("안호영 동물병원");
+                marker_D9[5].setPosition(new LatLng(36.3489,127.376));
+                marker_D9[5].setCaptionText("큰마을 4거리");
+                marker_D9[6].setPosition(new LatLng(36.3407,127.39));
+                marker_D9[6].setCaptionText("롯데백화점 앞");
+                marker_D9[7].setPosition(new LatLng(36.3368,127.395));
+                marker_D9[7].setCaptionText("용문동 선창교회");
+                marker_D9[8].setPosition(new LatLng(36.333, 127.412));
+                marker_D9[8].setCaptionText("목동 금호한사랑아파트 앞");
+                marker_D9[9].setPosition(new LatLng(36.3413, 127.4357));
+                marker_D9[9].setCaptionText("성남사거리 현대주유소");
+                marker_D9[10].setPosition(new LatLng(36.3486, 127.4357));
+                marker_D9[10].setCaptionText("대전복합터미널 한국병원앞");
+                marker_D9[11].setPosition(new LatLng(36.3651,127.4403));
+                marker_D9[11].setCaptionText("동춘당 앞");
+                marker_D9[12].setPosition(new LatLng(36.3676,127.431));
+                marker_D9[12].setCaptionText("법동 우체국 맞은편 ");
+
+
+                for(int j=0; j< marker_D9.length; j++)
+                {
+                    marker_D9[j].setWidth(80);
+                    marker_D9[j].setHeight(110);
+                    marker_D9[j].setMap(naverMap);
+                }
+
+                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.3271, 127.3376), 11).animate(CameraAnimation.Fly, 1000);;
+                naverMap.moveCamera(cameraUpdate);
+                break;
+            case "하교버스3번" :
+                path.setCoords(Arrays.asList(
+                        new LatLng(36.3273, 127.3374),
+                        new LatLng(36.3274, 127.3382),
+                        new LatLng(36.3276, 127.3383),
+                        new LatLng(36.3286, 127.3381),
+                        new LatLng(36.3291, 127.3381),
+                        new LatLng(36.3324, 127.3381),
+                        new LatLng(36.3324, 127.3331),
+                        new LatLng(36.334, 127.3332),
+                        new LatLng(36.336, 127.334),
+                        new LatLng(36.3428,127.3396),
+                        new LatLng(36.3458, 127.3405),
+                        new LatLng(36.349, 127.3405),
+                        new LatLng(36.3503, 127.3403),
+                        new LatLng(36.3536, 127.3416),
+                        new LatLng(36.3556, 127.3422),
+                        new LatLng(36.3622, 127.3448),
+                        new LatLng(36.3622, 127.3452),
+                        new LatLng(36.3607, 127.3497),
+                        new LatLng(36.3603, 127.3516),
+                        new LatLng(36.3604, 127.3528),
+                        new LatLng(36.3606, 127.3539),
+                        new LatLng(36.3612, 127.3558),
+                        new LatLng(36.362, 127.3576),
+                        new LatLng(36.3627, 127.359),
+                        new LatLng(36.3634, 127.3599),
+                        new LatLng(36.3637,127.3605),
+                        new LatLng(36.3646,127.3621),
+                        new LatLng(36.3661, 127.3653),
+                        new LatLng(36.3674, 127.3674),
+                        new LatLng(36.3652, 127.3696),
+                        new LatLng(36.3648, 127.3757),
+                        new LatLng(36.3647, 127.3767),
+                        new LatLng(36.3647, 127.3796),
+                        new LatLng(36.3746, 127.3797),
+                        new LatLng(36.3743, 127.3824),
+                        new LatLng(36.3743, 127.3906),
+                        new LatLng(36.3753, 127.3906),
+                        new LatLng(36.3757, 127.3904),
+                        new LatLng(36.3761, 127.39),
+                        new LatLng(36.3766, 127.3898),
+                        new LatLng(36.377,127.3899),
+                        new LatLng(36.3773, 127.3901),
+                        new LatLng(36.3774, 127.3905),
+                        new LatLng(36.3775, 127.3906),
+                        new LatLng(36.3777, 127.3906),
+                        new LatLng(36.3792, 127.3906),
+                        new LatLng(36.3791, 127.3921),
+                        new LatLng(36.3785, 127.3935),
+                        new LatLng(36.378, 127.3944),
+                        new LatLng(36.3772, 127.3964),
+                        new LatLng(36.3762, 127.3984),
+                        new LatLng(36.3757, 127.3983),
+                        new LatLng(36.376, 127.3994),
+                        new LatLng(36.3762, 127.4016),
+                        new LatLng(36.3772, 127.4043),
+                        new LatLng(36.378, 127.4053),
+                        new LatLng(36.3801, 127.4067),
+                        new LatLng(36.3804, 127.4067),
+                        new LatLng(36.3852, 127.4052),
+                        new LatLng(36.3866, 127.405),
+                        new LatLng(36.3997, 127.405),
+                        new LatLng(36.3997, 127.3956),
+                        new LatLng(36.3999, 127.3939),
+                        new LatLng(36.4003, 127.3921),
+                        new LatLng(36.4012, 127.3906),
+                        new LatLng(36.4022, 127.3894),
+                        new LatLng(36.4041, 127.3879),
+                        new LatLng(36.4045, 127.3875),
+                        new LatLng(36.4091, 127.3809),
+                        new LatLng(36.4093, 127.3801),
+                        new LatLng(36.4093, 127.3792),
+                        new LatLng(36.4077, 127.3758),
+                        new LatLng(36.4078, 127.3755),
+                        new LatLng(36.408, 127.3753),
+                        new LatLng(36.4086, 127.3756),
+                        new LatLng(36.4091, 127.3763),
+                        new LatLng(36.4094, 127.3771),
+                        new LatLng(36.4096, 127.3774),
+                        new LatLng(36.411, 127.3776),
+                        new LatLng(36.412, 127.3781),
+                        new LatLng(36.4133, 127.3783),
+                        new LatLng(36.4139, 127.3783),
+                        new LatLng(36.4165, 127.3778),
+                        new LatLng(36.4172, 127.3778),
+                        new LatLng(36.4173, 127.3779),
+                        new LatLng(36.4232, 127.3835),
+                        new LatLng(36.4318, 127.3877),
+                        new LatLng(36.4341, 127.3888),
+                        new LatLng(36.4391, 127.3959),
+                        new LatLng(36.4403, 127.3985),
+                        new LatLng(36.4404, 127.3987),
+                        new LatLng(36.4454, 127.4053),
+                        new LatLng(36.4479, 127.4096),
+                        new LatLng(36.4491, 127.4121),
+                        new LatLng(36.4495, 127.4133),
+                        new LatLng(36.4497, 127.4154),
+                        new LatLng(36.4488, 127.4186),
+                        new LatLng(36.4488, 127.4193),
+                        new LatLng(36.449, 127.42),
+                        new LatLng(36.4495, 127.421),
+                        new LatLng(36.4501, 127.4224),
+                        new LatLng(36.4502, 127.4233),
+                        new LatLng(36.4504, 127.425),
+                        new LatLng(36.4511, 127.4288),
+                        new LatLng(36.45, 127.429),
+                        new LatLng(36.4497, 127.4291)
+
+                ));
+                path.setColor(0xFFA72B43);
+                path.setMap(naverMap);
+
+                marker_D10[0].setPosition(new LatLng(36.3271, 127.3376));
+                marker_D10[0].setCaptionText("신학대학주차장");
+                marker_D10[1].setPosition(new LatLng( 36.3532, 127.3415));
+                marker_D10[1].setCaptionText("유성온천 7번 출구");
+                marker_D10[2].setPosition(new LatLng(36.3614, 127.3446));
+                marker_D10[2].setCaptionText("충대 온누리 교회 버스승강장");
+                marker_D10[3].setPosition(new LatLng(36.3607, 127.3495));
+                marker_D10[3].setCaptionText("궁동 소비자마트 맞은 편");
+                marker_D10[4].setPosition(new LatLng(36.3616, 127.3572));
+                marker_D10[4].setCaptionText("유성구청");
+                marker_D10[5].setPosition(new LatLng(36.3648, 127.3758));
+                marker_D10[5].setCaptionText("한아름아파트 102동 앞");
+                marker_D10[6].setPosition(new LatLng(36.3789, 127.3906));
+                marker_D10[6].setCaptionText("외국인 유학생 기숙사");
+                marker_D10[7].setPosition(new LatLng(36.3998, 127.4038));
+                marker_D10[7].setCaptionText("전민동 세종아파트");
+                marker_D10[8].setPosition(new LatLng(36.421, 127.3814));
+                marker_D10[8].setCaptionText("테크노벨리 날망집 버스주차장");
+                marker_D10[9].setPosition(new LatLng(36.4317, 127.3877));
+                marker_D10[9].setCaptionText("송강체육관 맞은 편");
+                marker_D10[10].setPosition(new LatLng(36.4493, 127.413));
+                marker_D10[10].setCaptionText("목상동 주민센터");
+                marker_D10[11].setPosition(new LatLng(36.4497, 127.429));
+                marker_D10[11].setCaptionText("신탄진역");
+
+
+                for(int j=0; j< marker_D10.length; j++)
+                {
+                    marker_D10[j].setWidth(80);
+                    marker_D10[j].setHeight(110);
+                    marker_D10[j].setMap(naverMap);
+                }
+
+                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.3271, 127.3376), 11).animate(CameraAnimation.Fly, 1000);;
+                naverMap.moveCamera(cameraUpdate);
+                break;
+            case "하교버스4번" :
+                path.setCoords(Arrays.asList(
+                        new LatLng(36.5135, 127.2591),
+                        new LatLng(36.5121, 127.2595),
+                        new LatLng(36.5112, 127.26),
+                        new LatLng(36.5098, 127.2609),
+                        new LatLng(36.5086, 127.2614),
+                        new LatLng(36.5078, 127.2617),
+                        new LatLng(36.5068, 127.2618),
+                        new LatLng(36.5046, 127.2612),
+                        new LatLng(36.4998, 127.2589),
+                        new LatLng(36.4974, 127.2574),
+                        new LatLng(36.4944, 127.2563),
+                        new LatLng(36.4912, 127.2563),
+                        new LatLng(36.4892, 127.2567),
+                        new LatLng(36.486, 127.2582),
+                        new LatLng(36.484, 127.2596),
+                        new LatLng(36.4723, 127.268),
+                        new LatLng(36.4717, 127.2686),
+                        new LatLng(36.4711, 127.2699),
+                        new LatLng(36.4692, 127.269),
+                        new LatLng(36.4687, 127.2719),
+                        new LatLng(36.4692, 127.2747),
+                        new LatLng(36.4647, 127.2753),
+                        new LatLng(36.4625, 127.2763),
+                        new LatLng(36.4568, 127.2821),
+                        new LatLng(36.4554, 127.2833),
+                        new LatLng(36.4538, 127.2842),
+                        new LatLng(36.452, 127.285),
+                        new LatLng(36.4502, 127.2855),
+                        new LatLng(36.4487, 127.2857),
+                        new LatLng(36.4389, 127.2857),
+                        new LatLng(36.4372, 127.2855),
+                        new LatLng(36.4362, 127.2849),
+                        new LatLng(36.4355, 127.2838),
+                        new LatLng(36.4355, 127.2859),
+                        new LatLng(36.4332, 127.2861),
+                        new LatLng(36.4304, 127.287),
+                        new LatLng(36.4284, 127.2888),
+                        new LatLng(36.4233, 127.2956),
+                        new LatLng(36.4221, 127.2972),
+                        new LatLng(36.4207, 127.2982),
+                        new LatLng(36.4188, 127.2989),
+                        new LatLng(36.4151, 127.2996),
+                        new LatLng(36.4103, 127.3012),
+                        new LatLng(36.406, 127.304),
+                        new LatLng(36.3996, 127.3097),
+                        new LatLng(36.3959, 127.3117),
+                        new LatLng(36.3843, 127.3203),
+                        new LatLng(36.3806, 127.3181),
+                        new LatLng(36.3797, 127.3179),
+                        new LatLng(36.3668, 127.3179),
+                        new LatLng(36.3667, 127.3307),
+                        new LatLng(36.3643, 127.3378),
+                        new LatLng(36.364, 127.3378),
+                        new LatLng(36.3625, 127.3369),
+                        new LatLng(36.3607, 127.3357),
+                        new LatLng(36.3578, 127.3318),
+                        new LatLng(36.3542, 127.3303),
+                        new LatLng(36.3524, 127.3291),
+                        new LatLng(36.3508, 127.335),
+                        new LatLng(36.3502, 127.34),
+                        new LatLng(36.3486, 127.3402),
+                        new LatLng(36.3459, 127.3401),
+                        new LatLng(36.343, 127.3394),
+                        new LatLng(36.3382, 127.3354),
+                        new LatLng(36.3382, 127.3382),
+                        new LatLng(36.3292, 127.3382)
+                ));
+
+                path.setColor(0xFFA72B43);
+                path.setMap(naverMap);
+
+                marker_D11[0].setPosition(new LatLng(36.3271, 127.3376));
+                marker_D11[0].setCaptionText("신학대학주차장");
+                marker_D11[1].setPosition(new LatLng( 36.3508, 127.3356));
+                marker_D11[1].setCaptionText("유성고등학교  건너");
+                marker_D11[2].setPosition(new LatLng(36.3516, 127.3324));
+                marker_D11[2].setCaptionText("정림스토어");
+                marker_D11[3].setPosition(new LatLng(36.3558,127.3311));
+                marker_D11[3].setCaptionText("구암역 건너");
+                marker_D11[4].setPosition(new LatLng(36.361, 127.3361));
+                marker_D11[4].setCaptionText("유성 새마을금고 건너");
+                marker_D11[5].setPosition(new LatLng(36.3744, 127.318));
+                marker_D11[5].setCaptionText("노은역 3번 출구");
+                marker_D11[6].setPosition(new LatLng(36.3853, 127.3201));
+                marker_D11[6].setCaptionText("지족역건너 버스승강장");
+                marker_D11[7].setPosition(new LatLng(36.3927, 127.3145));
+                marker_D11[7].setCaptionText("반석역5번출구");
+                marker_D11[8].setPosition(new LatLng(36.469, 127.2734));
+                marker_D11[8].setCaptionText("세종버스터미널");
+                marker_D11[9].setPosition(new LatLng(36.4813, 127.262));
+                marker_D11[9].setCaptionText("첫마을 2단지 버스승강장");
+                marker_D11[10].setPosition(new LatLng(36.4879,127.2574));
+                marker_D11[10].setCaptionText("세종 연세에스의원");
+                marker_D11[11].setPosition(new LatLng(36.5016, 127.2601));
+                marker_D11[11].setCaptionText("세종청사 남측");
+                marker_D11[12].setPosition(new LatLng(36.512, 127.26));
+                marker_D11[12].setCaptionText("도램마을 지선 버스승강장");
+
+                for(int j=0; j< marker_D11.length; j++)
+                {
+                    marker_D11[j].setWidth(80);
+                    marker_D11[j].setHeight(110);
+                    marker_D11[j].setMap(naverMap);
+                }
+
+                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.3271, 127.3376), 11).animate(CameraAnimation.Fly, 1000);;
+                naverMap.moveCamera(cameraUpdate);
+                break;
+            case "하교버스5번" :
+                path.setCoords(Arrays.asList(
+                        new LatLng(36.2788, 127.2377),
+                        new LatLng(36.2791, 127.2378),
+                        new LatLng(36.2812, 127.2397),
+                        new LatLng(36.2814, 127.2399),
+                        new LatLng(36.2818, 127.2399),
+                        new LatLng(36.2821, 127.2391),
+                        new LatLng(36.2824, 127.2393),
+                        new LatLng(36.2885, 127.2417),
+                        new LatLng(36.288, 127.2436),
+                        new LatLng(36.288, 127.2441),
+                        new LatLng(36.2885, 127.245),
+                        new LatLng(36.2931, 127.2426),
+                        new LatLng(36.2936, 127.2428),
+                        new LatLng(36.2944, 127.2438),
+                        new LatLng(36.295, 127.2449),
+                        new LatLng(36.2957, 127.246),
+                        new LatLng(36.2967, 127.2462),
+                        new LatLng(36.2999, 127.2423),
+                        new LatLng(36.2999, 127.2359),
+                        new LatLng(36.2988, 127.2359),
+                        new LatLng(36.2982, 127.2363),
+                        new LatLng(36.2973, 127.2377),
+                        new LatLng(36.2946, 127.2413),
+                        new LatLng(36.2935, 127.2423),
+                        new LatLng(36.2884, 127.2449),
+                        new LatLng(36.2845, 127.2474),
+                        new LatLng(36.2825, 127.25),
+                        new LatLng(36.2819, 127.2506),
+                        new LatLng(36.2786, 127.2518),
+                        new LatLng(36.2763, 127.2526),
+                        new LatLng(36.2757, 127.2533),
+                        new LatLng(36.2726, 127.25),
+                        new LatLng(36.2721, 127.2508),
+                        new LatLng(36.2721, 127.2513),
+                        new LatLng(36.2727, 127.2521),
+                        new LatLng(36.2726, 127.2533),
+                        new LatLng(36.2712, 127.2554),
+                        new LatLng(36.2712, 127.2554),
+                        new LatLng(36.2705, 127.2586),
+                        new LatLng(36.2679, 127.2602),
+                        new LatLng(36.2688, 127.2625),
+                        new LatLng(36.2687, 127.2633),
+                        new LatLng(36.2684, 127.2642),
+                        new LatLng(36.2684, 127.2673),
+                        new LatLng(36.2683, 127.2685),
+                        new LatLng(36.2672, 127.2706),
+                        new LatLng(36.265, 127.2737),
+                        new LatLng(36.2624, 127.2756),
+                        new LatLng(36.2629, 127.2775),
+                        new LatLng(36.2635, 127.2786),
+                        new LatLng(36.2668, 127.2814),
+                        new LatLng(36.2668, 127.283),
+                        new LatLng(36.2667, 127.2871),
+                        new LatLng(36.2669, 127.2886),
+                        new LatLng(36.2677, 127.29),
+                        new LatLng(36.2688, 127.2907),
+                        new LatLng(36.2722, 127.2911),
+                        new LatLng(36.2737, 127.2914),
+                        new LatLng(36.2776, 127.2944),
+                        new LatLng(36.2787, 127.2959),
+                        new LatLng(36.2793, 127.2973),
+                        new LatLng(36.2799, 127.3),
+                        new LatLng(36.2803, 127.301),
+                        new LatLng(36.2812, 127.3026),
+                        new LatLng(36.2815, 127.3044),
+                        new LatLng(36.2817, 127.3062),
+                        new LatLng(36.2834, 127.3096),
+                        new LatLng(36.285, 127.3109),
+                        new LatLng(36.2856, 127.3118),
+                        new LatLng(36.2858, 127.3129),
+                        new LatLng(36.2857, 127.3162),
+                        new LatLng(36.2859, 127.3172),
+                        new LatLng(36.2873, 127.3194),
+                        new LatLng(36.2882, 127.3199),
+                        new LatLng(36.2892, 127.3201),
+                        new LatLng(36.2917, 127.3201),
+                        new LatLng(36.2966, 127.322),
+                        new LatLng(36.2984, 127.3234),
+                        new LatLng(36.2992, 127.3243),
+                        new LatLng(36.2997, 127.325),
+                        new LatLng(36.3013, 127.3297),
+                        new LatLng(36.3015, 127.3306),
+                        new LatLng(36.3013, 127.335),
+                        new LatLng(36.3014, 127.3365),
+                        new LatLng(36.302, 127.3388),
+                        new LatLng(36.3031, 127.3443),
+                        new LatLng(36.304, 127.3488),
+                        new LatLng(36.3052, 127.3534),
+                        new LatLng(36.3167, 127.3485),
+                        new LatLng(36.3177, 127.3481),
+                        new LatLng(36.3323, 127.3483),
+                        new LatLng(36.3323, 127.3381),
+                        new LatLng(36.3292, 127.3381)
+
+                ));
+                path.setColor(0xFFA72B43);
+                path.setMap(naverMap);
+
+                marker_D12[0].setPosition(new LatLng(36.3271, 127.3377));
+                marker_D12[0].setCaptionText("신학대학주차장");
+                marker_D12[1].setPosition(new LatLng( 36.3208, 127.3479));
+                marker_D12[1].setCaptionText("엘드수목토아파트 101동 횡단보도");
+                marker_D12[2].setPosition(new LatLng(36.3047, 127.3508));
+                marker_D12[2].setCaptionText("가수원 육교");
+                marker_D12[3].setPosition(new LatLng(36.302, 127.3376));
+                marker_D12[3].setCaptionText("관저동KT");
+                marker_D12[4].setPosition(new LatLng(36.2985, 127.3231));
+                marker_D12[4].setCaptionText("진잠4거리");
+                marker_D12[5].setPosition(new LatLng(36.2673, 127.2705));
+                marker_D12[5].setCaptionText("포스코더샾아파트 정문");
+                marker_D12[6].setPosition(new LatLng(36.2699, 127.2569));
+                marker_D12[6].setCaptionText("금암 주공아파트 건너");
+                marker_D12[7].setPosition(new LatLng(36.274, 127.2517));
+                marker_D12[7].setCaptionText("계룡시청4거리");
+                marker_D12[8].setPosition(new LatLng(36.2975, 127.2453));
+                marker_D12[8].setCaptionText("삼위일체 성당건너");
+                marker_D12[9].setPosition(new LatLng(36.2999, 127.2414));
+                marker_D12[9].setCaptionText("초록델리");
+                marker_D12[10].setPosition(new LatLng(36.2884, 127.2424));
+                marker_D12[10].setCaptionText("사계절마트 건너");
+                marker_D12[11].setPosition(new LatLng(36.2787, 127.2375));
+                marker_D12[11].setCaptionText("대동아파트");
+
+
+                for(int j=0; j< marker_D12.length; j++)
+                {
+                    marker_D12[j].setWidth(80);
+                    marker_D12[j].setHeight(110);
+                    marker_D12[j].setMap(naverMap);
+                }
+
+                cameraUpdate = CameraUpdate.scrollAndZoomTo(new LatLng(36.2788, 127.2377), 11).animate(CameraAnimation.Fly, 1000);;
+                naverMap.moveCamera(cameraUpdate);
+                break;
+               /* path.setColor(Color.BLUE);
+                path.setMap(naverMap);
+                break;*/
             default:
                 path.setMap(null);
                 break;
