@@ -14,6 +14,9 @@ import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +44,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 public class BusStopInformationActivity extends AppCompatActivity implements OnMapReadyCallback
@@ -75,16 +81,47 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
     Marker[] marker_TEST1;
     Marker[] marker_TEST2;
 
+    String str_nowTime;
+
+    // 사운드 관련 처리를 위한 요소들
+    SoundPool soundPool;
+    int sound;
+
+    String str_nowBusStop;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus_stop_information);
 
+        // 사운드 처리
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(1)
+                    .build();
+        } else {
+            soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 1);
+        }
+
+        sound = soundPool.load(getApplicationContext(), R.raw.bell, 1);
+
         getSupportActionBar().hide();
 
         Intent intent = getIntent();
         busNumber = intent.getStringExtra("bus");
+
+        LocalDate seoulNow = LocalDate.now(ZoneId.of("Asia/Seoul"));
+        // 포맷 정의
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        // 포맷 적용
+        String formatedNow = seoulNow.format(formatter);
+
+        System.out.println(formatedNow + "");
+
+        str_nowTime = formatedNow + "";
 
         // 경로, 포지션
         path = new PathOverlay();
@@ -337,6 +374,33 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
         switch (busNumber)
         {
             case "등교버스1번" :
+                // 산내소방서
+                if (latitude > 36.28076649224061 && latitude < 36.28328138427356 && longitude > 127.46493543678868 && longitude < 127.46972222625904)
+                {
+                    tv_nowBusStop.setText("산내소방서");
+                    tv_nextBusStop.setText("은어송초등학교 앞");
+                }
+
+                // 은어송초등학교 앞
+                if (latitude > 36.29920918206583 && latitude < 36.3032197677609 && longitude > 127.45507516678663 && longitude < 127.4589508529688)
+                {
+                    tv_nowBusStop.setText("은어송초등학교 앞");
+                    tv_nextBusStop.setText("효동 현대아파트 106동 앞");
+                }
+
+                // 효동 현대아파트 106동 앞
+                if (latitude > 36.31456649903346 && latitude < 36.319037068538734 && longitude > 127.43787954198643 && longitude < 127.44240253935484)
+                {
+                    tv_nowBusStop.setText("효동 현대아파트 106동 앞");
+                    tv_nextBusStop.setText("대전역 대성미용갤러리 앞");
+                }
+
+                // 대전역 대성미용갤러리 앞
+                if (latitude > 36.328966068372175 && latitude < 36.33161720577736 && longitude > 127.43063761438242 && longitude < 127.43460374439849)
+                {
+                    tv_nowBusStop.setText("대전역 대성미용갤러리 앞");
+                    tv_nextBusStop.setText("교보생명빌딩 앞");
+                }
                 break;
             case "등교버스2번" :
                 break;
@@ -366,21 +430,21 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
 
             case "테스트2번" :
                 // 목원대학교입구
-                if (latitude > 36.328617077514004 && latitude < 36.32974356951019 && longitude > 127.33716452603555 && longitude < 127.33905288647102)
+                if (latitude > 36.329155691055 && latitude < 36.3303608855219 && longitude > 36.32957115991179 && longitude < 127.33931652575328)
                 {
                     tv_nowBusStop.setText("목원대학교입구");
                     tv_nextBusStop.setText("중앙로터리");
                 }
 
                 // 중앙로터리
-                if (latitude > 36.3266741844727 && latitude < 36.32812993439954 && longitude > 127.33759408043181 && longitude < 127.33917048590587)
+                if (latitude > 36.326777795226484 && latitude < 36.3281998852861 && longitude > 127.33743242952323 && longitude < 127.33920957269709)
                 {
                     tv_nowBusStop.setText("중앙로터리");
                     tv_nextBusStop.setText("중앙도서관");
                 }
 
                 // 중앙도서관
-                if (latitude > 36.3248546743093 && latitude < 36.32582358846426 && longitude > 127.33737925747647 && longitude < 127.338746623646)
+                if (latitude > 36.32462023645471 && latitude < 36.3262876038027 && longitude > 127.33712035923847 && longitude < 127.33901951106942)
                 {
                     tv_nowBusStop.setText("중앙도서관");
                     tv_nextBusStop.setText("공과대학");
@@ -421,18 +485,28 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                         String number = jsonObject.getString("busNumber");
                         String start = jsonObject.getString("start");
                         String end = jsonObject.getString("end");
+                        String date = jsonObject.getString("date");
 
                         if(busNumber.equals(number))
                         {
-                            if(tv_nowBusStop.getText().equals(start))
+                            if(str_nowTime.equals(date))
                             {
-                                int_start++;
-                            }
+                                if(tv_nowBusStop.getText().equals(start))
+                                {
+                                    int_start++;
+                                }
 
-                            if(tv_nowBusStop.getText().equals(end))
-                            {
-                                int_end++;
+                                if(tv_nowBusStop.getText().equals(end))
+                                {
+                                    int_end++;
+                                }
                             }
+                        }
+
+                        if(!tv_nowBusStop.getText().equals(str_nowBusStop))
+                        {
+                            soundPool.play(sound, 1, 1, 1, 0, 1);
+                            str_nowBusStop = tv_nowBusStop.getText().toString();
                         }
 
                         if (int_start == 0 && int_end == 0)

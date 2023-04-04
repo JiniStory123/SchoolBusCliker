@@ -76,6 +76,78 @@ public class GoSchoolFragment extends Fragment
             }
         });
 
+        bt_D2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getContext(), BusStopInformationActivity.class);
+                intent.putExtra("bus", "등교버스2번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
+        bt_D3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getContext(), BusStopInformationActivity.class);
+                intent.putExtra("bus", "등교버스3번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
+        bt_D4.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getContext(), BusStopInformationActivity.class);
+                intent.putExtra("bus", "등교버스4번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
+        bt_D5.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getContext(), BusStopInformationActivity.class);
+                intent.putExtra("bus", "등교버스5번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
+        bt_D6.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getContext(), BusStopInformationActivity.class);
+                intent.putExtra("bus", "등교버스6번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
+        bt_D7.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getContext(), BusStopInformationActivity.class);
+                intent.putExtra("bus", "등교버스7번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
         bt_test1.setOnClickListener(new View.OnClickListener()
         {
             @Override
