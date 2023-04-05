@@ -451,17 +451,18 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 }
 
                 // 공과대학
-                if (latitude > 36.32194445587073 && latitude < 36.323402602035024 && longitude > 127.33800687006999 && longitude < 127.3392741249415)
+                if (latitude > 36.32111059794323 && latitude < 36.32476118545646 && longitude > 127.33680943344088 && longitude < 127.34049638749629)
                 {
                     tv_nowBusStop.setText("공과대학");
                     tv_nextBusStop.setText("종점");
                 }
-
-            default:
-                // 임시로
-                tv_nowBusStop.setText("벗어난상태");
-                tv_nextBusStop.setText("벗어난상태");
                 break;
+
+//            default:
+//                // 임시로
+//                tv_nowBusStop.setText("벗어난상태");
+//                tv_nextBusStop.setText("벗어난상태");
+//                break;
         }
     }
 
@@ -503,10 +504,13 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                             }
                         }
 
-                        if(!tv_nowBusStop.getText().equals(str_nowBusStop))
+                        if(!tv_nowBusStop.getText().equals("이번 정류장"))
                         {
-                            soundPool.play(sound, 1, 1, 1, 0, 1);
-                            str_nowBusStop = tv_nowBusStop.getText().toString();
+                            if(!tv_nowBusStop.getText().equals(str_nowBusStop))
+                            {
+                                soundPool.play(sound, 1, 1, 1, 0, 1);
+                                str_nowBusStop = tv_nowBusStop.getText().toString();
+                            }
                         }
 
                         if (int_start == 0 && int_end == 0)
