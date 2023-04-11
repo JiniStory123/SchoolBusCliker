@@ -44,10 +44,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Date;
 
 public class BusStopInformationActivity extends AppCompatActivity implements OnMapReadyCallback
 {
@@ -88,6 +91,8 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
     int sound;
 
     String str_nowBusStop;
+
+    int int_count;
 
 
 
@@ -480,27 +485,89 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 {
                     int int_start = 0;
                     int int_end = 0;
+
                     for (int i = 0; i < response.length(); i++)
                     {
                         JSONObject jsonObject = response.getJSONObject(i);
+                        int id = Integer.parseInt(jsonObject.getString("id"));
                         String number = jsonObject.getString("busNumber");
                         String start = jsonObject.getString("start");
                         String end = jsonObject.getString("end");
                         String date = jsonObject.getString("date");
+                        String isBoarding = jsonObject.getString("isBoarding");
+
+                        SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd");
+                        Date date1 = fm.parse(date);
+                        Date date2 = fm.parse(str_nowTime);
+
+                        int result = date1.compareTo(date2);
+
+                        if(result == 0)
+                        {
+                            System.out.println("동일한 날짜");
+                        }
+                        else if (result < 0)
+                        {
+                            // System.out.println("date1은 date2 이전 날짜");
+                            if(busNumber.equals(number))
+                            {
+                                if (isBoarding.equals("탑승 전"))
+                                {
+                                    Response.Listener<String> responseListener = new Response.Listener<String>()
+                                    {
+                                        @Override
+                                        public void onResponse(String response)
+                                        {
+                                            try
+                                            {
+                                                System.out.println("hongchul" + response);
+                                                JSONObject jsonObject = new JSONObject(response);
+                                                boolean success = jsonObject.getBoolean("success");
+                                                if (success)
+                                                { // 성공
+
+                                                } else
+                                                { // 실패
+                                                    Toast.makeText(getApplicationContext(), "실패",Toast.LENGTH_SHORT).show();
+                                                }
+                                            } catch (JSONException e)
+                                            {
+                                                e.printStackTrace();
+                                            }
+                                        }
+
+                                    };
+                                    RequestUpdate requestUpdate = new RequestUpdate(id, responseListener);
+                                    RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+                                    queue.add(requestUpdate);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // System.out.println("date1은 date2 이후 날짜");
+                        }
+
+
+                        System.out.println("JINI" + date1 + "");
 
                         if(busNumber.equals(number))
                         {
                             if(str_nowTime.equals(date))
                             {
-                                if(tv_nowBusStop.getText().equals(start))
+                                if (isBoarding.equals("탑승 전"))
                                 {
-                                    int_start++;
+                                    if(tv_nowBusStop.getText().equals(start))
+                                    {
+                                        int_start++;
+                                    }
+
+                                    if(tv_nowBusStop.getText().equals(end))
+                                    {
+                                        int_end++;
+                                    }
                                 }
 
-                                if(tv_nowBusStop.getText().equals(end))
-                                {
-                                    int_end++;
-                                }
                             }
                         }
 
@@ -508,8 +575,8 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                         {
                             if(!tv_nowBusStop.getText().equals(str_nowBusStop))
                             {
-                                soundPool.play(sound, 1, 1, 1, 0, 1);
                                 str_nowBusStop = tv_nowBusStop.getText().toString();
+                                int_count = 0;
                             }
                         }
 
@@ -522,6 +589,12 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                         {
                             tv_busStopInformation.setTextColor(Color.RED);
                             tv_busStopInformation.setText("승하차 인원이 있어요!");
+
+                            if (int_count == 0)
+                            {
+                                soundPool.play(sound, 1, 1, 1, 0, 1);
+                                int_count++;
+                            }
                         }
 
                         tv_busIn.setText(int_start + "");
@@ -532,6 +605,9 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 catch (JSONException e)
                 {
                     e.printStackTrace();
+                } catch (ParseException e)
+                {
+                    throw new RuntimeException(e);
                 }
             }
         }, new Response.ErrorListener()
