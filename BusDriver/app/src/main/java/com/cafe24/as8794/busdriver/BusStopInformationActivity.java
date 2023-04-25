@@ -625,11 +625,33 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 }
 
                 // 외국인유학생 기숙사
-                if (latitude > 36.3992319541082 && latitude < 36.40015124121452 && longitude > 127.4012656936575 && longitude < 127.40484944197824)
+                if (latitude > 36.37692048922958 && latitude < 36.379200158272035 && longitude > 127.38926368240391 && longitude < 127.39391101589533)
                 {
-                    tv_nowBusStop.setText(str_BusStop[6]);
-                    tv_nextBusStop.setText(str_BusStop[7]);
+                    tv_nowBusStop.setText(str_BusStop[7]);
+                    tv_nextBusStop.setText(str_BusStop[8]);
                 }
+
+                // 한아름아파트
+                if (latitude > 36.364328977827775 && latitude < 36.36546429840076 && longitude > 127.37513044107594 && longitude < 127.37948725435662)
+                {
+                    tv_nowBusStop.setText(str_BusStop[8]);
+                    tv_nextBusStop.setText(str_BusStop[9]);
+                }
+
+                // 유성온천
+                if (latitude > 36.35215815268795 && latitude < 36.35440132002758 && longitude > 127.3404335951467 && longitude < 127.34541064527176)
+                {
+                    tv_nowBusStop.setText(str_BusStop[8]);
+                    tv_nextBusStop.setText(str_BusStop[9]);
+                }
+
+                // 목원대학교
+                if (latitude > 36.319015465166565 && latitude < 36.331957638629746 && longitude > 127.33527974119649 && longitude < 127.34165153136762)
+                {
+                    tv_nowBusStop.setText(str_BusStop[11]);
+                    tv_nextBusStop.setText("종점");
+                }
+                break;
 
             case "테스트1번" :
                 // 동신빌라
