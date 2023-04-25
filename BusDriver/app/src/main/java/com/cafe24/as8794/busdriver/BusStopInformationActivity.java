@@ -324,15 +324,21 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
             case "등교버스7번" :
                 URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_D7.php";
                 break;
-//            case "하교버스1번" :
-//                URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_H1.php";
-//                break;
-//            case "하교버스2번" :
-//                URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_H2.php";
-//                break;
-//            case "하교버스3번" :
-//                URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_H3.php";
-//                break;
+            case "하교버스1번" :
+                URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_H1.php";
+                break;
+            case "하교버스2번" :
+                URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_H2.php";
+                break;
+            case "하교버스3번" :
+                URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_H3.php";
+                break;
+            case "하교버스4번" :
+                URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_H4.php";
+                break;
+            case "하교버스5번" :
+                URL = "https://as8794.cafe24.com/new_bus_clicker/get_json/get_json_bus_city_stop_code_H5.php";
+                break;
 
         }
 
@@ -569,6 +575,61 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 break;
 
             case "등교버스3번" :
+                // 신탄진역
+                if (latitude > 36.44906626731378 && latitude < 36.45290648778754 && longitude > 127.42634350790547 && longitude < 127.43125317921637)
+                {
+                    tv_nowBusStop.setText(str_BusStop[0]);
+                    tv_nextBusStop.setText(str_BusStop[1]);
+                }
+
+                // 신탄진 톨게이트
+                if (latitude > 36.438149996301476 && latitude < 36.44207774665802 && longitude > 127.42346051190442 && longitude < 127.42922725847504)
+                {
+                    tv_nowBusStop.setText(str_BusStop[1]);
+                    tv_nextBusStop.setText(str_BusStop[2]);
+                }
+
+                // 삼성전자 리빙프라자
+                if (latitude > 36.442509539899085 && latitude < 36.444617416806985 && longitude > 127.42473506636085 && longitude < 127.4264415978605)
+                {
+                    tv_nowBusStop.setText(str_BusStop[2]);
+                    tv_nextBusStop.setText(str_BusStop[3]);
+                }
+
+                // 목상동 파출소
+                if (latitude > 36.44746944712039 && latitude < 36.449948204867255 && longitude > 127.40932220305672 && longitude < 127.41393130767285)
+                {
+                    tv_nowBusStop.setText(str_BusStop[3]);
+                    tv_nextBusStop.setText(str_BusStop[4]);
+                }
+
+                // 송강체육관
+                if (latitude > 36.4306493241381 && latitude < 36.43393692103906 && longitude > 127.3853170317534 && longitude < 127.38979964175381)
+                {
+                    tv_nowBusStop.setText(str_BusStop[4]);
+                    tv_nextBusStop.setText(str_BusStop[5]);
+                }
+
+                // 대전테크노벨리
+                if (latitude > 36.4199268256754 && latitude < 36.42392565098441 && longitude > 127.37995484451064 && longitude < 127.38395754343603)
+                {
+                    tv_nowBusStop.setText(str_BusStop[5]);
+                    tv_nextBusStop.setText(str_BusStop[6]);
+                }
+
+                // 전민동 세종아파트
+                if (latitude > 36.3992319541082 && latitude < 36.40015124121452 && longitude > 127.4012656936575 && longitude < 127.40484944197824)
+                {
+                    tv_nowBusStop.setText(str_BusStop[6]);
+                    tv_nextBusStop.setText(str_BusStop[7]);
+                }
+
+                // 외국인유학생 기숙사
+                if (latitude > 36.3992319541082 && latitude < 36.40015124121452 && longitude > 127.4012656936575 && longitude < 127.40484944197824)
+                {
+                    tv_nowBusStop.setText(str_BusStop[6]);
+                    tv_nextBusStop.setText(str_BusStop[7]);
+                }
 
             case "테스트1번" :
                 // 동신빌라
@@ -1062,10 +1123,11 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                     marker_D2[j].setMap(naverMap);
                 }
                 break;
+
             case "등교버스3번" :
                 path.setCoords(Arrays.asList(
-                        new LatLng(36.4554, 127.4283), // 산내소방서
-                        new LatLng(36.451, 127.4288), // 은어송초등학교
+                        //new LatLng(36.4554, 127.4283), // 산내소방서
+                        //new LatLng(36.451, 127.4288), // 은어송초등학교
                         new LatLng(36.4474, 127.4294),
                         new LatLng(36.4411, 127.4287),
                         new LatLng(36.4397, 127.427),
@@ -1103,8 +1165,17 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                         new LatLng(36.3775, 127.4048),
                         new LatLng(36.3772, 127.4043),
                         new LatLng(36.3763, 127.4014),
-                        new LatLng(36.3758, 127.3985),
-                        new LatLng(36.3744, 127.3935),
+                        new LatLng(36.37590012852339, 127.39926026368),
+                        new LatLng(36.376132536907335, 127.39847858420393),
+                        new LatLng(36.37843105055203, 127.39356172163981),
+                        new LatLng(36.37909853880058, 127.39200207647399),
+                        new LatLng(36.379170879824414, 127.3905508742993),
+                        new LatLng(36.377679658410784, 127.39048491135274),
+                        new LatLng(36.37691344305857, 127.38986258190424),
+                        new LatLng(36.376048042274185, 127.38994741514429),
+                        new LatLng(36.37550789982877, 127.39046569784982),
+                        new LatLng(36.37428207237552, 127.39053757748937),
+                        new LatLng(36.37439848904898, 127.39350797507396),
                         new LatLng(36.3671, 127.3934),
                         new LatLng(36.365, 127.3935),
                         new LatLng(36.3649, 127.3833),
@@ -1148,9 +1219,9 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 marker_D3[6].setCaptionText("전민동 세종Ⓐ 건너편");
                 marker_D3[7].setPosition(new LatLng(36.3775, 127.3902));
                 marker_D3[7].setCaptionText("외국인 유학생 기숙사");
-                marker_D3[8].setPosition(new LatLng(37.3651, 127.3755));
+                marker_D3[8].setPosition(new LatLng(36.36507462586364, 127.37569717712056));
                 marker_D3[8].setCaptionText("한아름Ⓐ 102동 건너 만년 버스승강장");
-                marker_D3[9].setPosition(new LatLng(37.3554, 127.3412));
+                marker_D3[9].setPosition(new LatLng(36.353138749663245, 127.34108676286755));
                 marker_D3[9].setCaptionText("유성온천역 3번출구");
                 marker_D3[10].setPosition(new LatLng(36.32668980512917, 127.3384906899361));
                 marker_D3[10].setCaptionText("목원대학교");

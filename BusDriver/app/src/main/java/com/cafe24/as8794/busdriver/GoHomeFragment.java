@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,6 +57,18 @@ public class GoHomeFragment extends Fragment
         bt_H3 = view.findViewById(R.id.bt_H3);
         bt_H4 = view.findViewById(R.id.bt_H4);
         bt_H5 = view.findViewById(R.id.bt_H5);
+
+        bt_H1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getContext(), BusStopInformationActivity.class);
+                intent.putExtra("bus", "하교버스1번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
 
         return view;
     }

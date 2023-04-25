@@ -591,8 +591,8 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
                 break;
             case "등교버스3번" :
                 path.setCoords(Arrays.asList(
-                        new LatLng(36.4554, 127.4283), // 산내소방서
-                        new LatLng(36.451, 127.4288), // 은어송초등학교
+                        //new LatLng(36.4554, 127.4283), // 산내소방서
+                        //new LatLng(36.451, 127.4288), // 은어송초등학교
                         new LatLng(36.4474, 127.4294),
                         new LatLng(36.4411, 127.4287),
                         new LatLng(36.4397, 127.427),
@@ -630,8 +630,17 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
                         new LatLng(36.3775, 127.4048),
                         new LatLng(36.3772, 127.4043),
                         new LatLng(36.3763, 127.4014),
-                        new LatLng(36.3758, 127.3985),
-                        new LatLng(36.3744, 127.3935),
+                        new LatLng(36.37590012852339, 127.39926026368),
+                        new LatLng(36.376132536907335, 127.39847858420393),
+                        new LatLng(36.37843105055203, 127.39356172163981),
+                        new LatLng(36.37909853880058, 127.39200207647399),
+                        new LatLng(36.379170879824414, 127.3905508742993),
+                        new LatLng(36.377679658410784, 127.39048491135274),
+                        new LatLng(36.37691344305857, 127.38986258190424),
+                        new LatLng(36.376048042274185, 127.38994741514429),
+                        new LatLng(36.37550789982877, 127.39046569784982),
+                        new LatLng(36.37428207237552, 127.39053757748937),
+                        new LatLng(36.37439848904898, 127.39350797507396),
                         new LatLng(36.3671, 127.3934),
                         new LatLng(36.365, 127.3935),
                         new LatLng(36.3649, 127.3833),
@@ -675,9 +684,9 @@ public class SearchBusStopFragment extends Fragment implements OnMapReadyCallbac
                 marker_D3[6].setCaptionText("전민동 세종Ⓐ 건너편");
                 marker_D3[7].setPosition(new LatLng(36.3775, 127.3902));
                 marker_D3[7].setCaptionText("외국인 유학생 기숙사");
-                marker_D3[8].setPosition(new LatLng(37.3651, 127.3755));
+                marker_D3[8].setPosition(new LatLng(36.36507462586364, 127.37569717712056));
                 marker_D3[8].setCaptionText("한아름Ⓐ 102동 건너 만년 버스승강장");
-                marker_D3[9].setPosition(new LatLng(37.3554, 127.3412));
+                marker_D3[9].setPosition(new LatLng(36.353138749663245, 127.34108676286755));
                 marker_D3[9].setCaptionText("유성온천역 3번출구");
                 marker_D3[10].setPosition(new LatLng(36.32668980512917, 127.3384906899361));
                 marker_D3[10].setCaptionText("목원대학교");
