@@ -21,6 +21,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -86,7 +87,9 @@ public class LoginActivity extends AppCompatActivity
         setContentView(R.layout.activity_login);
 
         // 액션바 없애기
-        getSupportActionBar().hide();
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.title_login);
 
         // 액티비티 등장 애니메이션
         overridePendingTransition(R.anim.fadein, R.anim.none);

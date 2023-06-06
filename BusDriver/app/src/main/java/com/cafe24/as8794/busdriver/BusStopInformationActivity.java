@@ -1690,4 +1690,23 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 break;
         }
     }
+
+    // 뒤로가기
+    private long tempTime = System.currentTimeMillis();
+    @Override
+    public void onBackPressed()
+    {
+//        super.onBackPressed();
+        if (System.currentTimeMillis() > tempTime + 2000)
+        {
+            tempTime = System.currentTimeMillis();
+            Toast.makeText(this, "한번 더 누르시면 창이 닫힙니다", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (System.currentTimeMillis() <= tempTime + 2000)
+        {
+            finish();
+        }
+    }
 }
