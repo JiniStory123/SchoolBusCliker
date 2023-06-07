@@ -70,6 +70,18 @@ public class GoHomeFragment extends Fragment
             }
         });
 
+        bt_H2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getContext(), BusStopInformationActivity.class);
+                intent.putExtra("bus", "하교버스2번");
+                startActivity(intent);
+                main.overridePendingTransition(R.anim.horizon, R.anim.none);
+            }
+        });
+
         return view;
     }
 }

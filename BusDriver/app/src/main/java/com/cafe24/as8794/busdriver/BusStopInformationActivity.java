@@ -512,12 +512,13 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 }
 
                 // 목원대학교
-                if (latitude > 36.319015465166565 && latitude < 36.331957638629746 && longitude > 127.33527974119649 && longitude < 127.34165153136762)
+                if (latitude > 36.31977899352905 && latitude < 36.32962177787277 && longitude > 127.33637642545834 && longitude < 127.341101031621)
                 {
                     tv_nowBusStop.setText(str_BusStop[13]);
                     tv_nextBusStop.setText("종점");
                 }
                 break;
+
             case "등교버스2번" :
                 // 법동우체국
                 if (latitude > 36.36667685691265 && latitude < 36.367862274262365 && longitude > 127.42977541962942 && longitude < 127.43149233890516)
@@ -597,7 +598,7 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 }
 
                 // 목원대학교
-                if (latitude > 36.319015465166565 && latitude < 36.331957638629746 && longitude > 127.33527974119649 && longitude < 127.34165153136762)
+                if (latitude > 36.31977899352905 && latitude < 36.32962177787277 && longitude > 127.33637642545834 && longitude < 127.341101031621)
                 {
                     tv_nowBusStop.setText(str_BusStop[11]);
                     tv_nextBusStop.setText("종점");
@@ -676,7 +677,7 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 }
 
                 // 목원대학교
-                if (latitude > 36.319015465166565 && latitude < 36.331957638629746 && longitude > 127.33527974119649 && longitude < 127.34165153136762)
+                if (latitude > 36.31977899352905 && latitude < 36.32962177787277 && longitude > 127.33637642545834 && longitude < 127.341101031621)
                 {
                     tv_nowBusStop.setText(str_BusStop[11]);
                     tv_nextBusStop.setText("종점");
@@ -790,9 +791,109 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                 }
 
                 // 목원대학교
-                if (latitude > 36.319015465166565 && latitude < 36.331957638629746 && longitude > 127.33527974119649 && longitude < 127.34165153136762)
+                if (latitude > 36.31977899352905 && latitude < 36.32962177787277 && longitude > 127.33637642545834 && longitude < 127.341101031621)
                 {
                     tv_nowBusStop.setText(str_BusStop[15]);
+                    tv_nextBusStop.setText("종점");
+                }
+                break;
+
+            case "등교버스5번" :
+                // 하나로마트
+                if (latitude > 36.28166757538796 && latitude < 36.28267674482217 && longitude > 127.23836419716143 && longitude < 127.24000026096738)
+                {
+                    tv_nowBusStop.setText(str_BusStop[0]);
+                    tv_nextBusStop.setText(str_BusStop[1]);
+                }
+
+                // 사계절마트
+                if (latitude > 36.2845257935138 && latitude < 36.28691356893669 && longitude > 127.2394214445963 && longitude < 127.24205849325482)
+                {
+                    tv_nowBusStop.setText(str_BusStop[1]);
+                    tv_nextBusStop.setText(str_BusStop[2]);
+                }
+
+                // 삼위일체
+                if (latitude > 36.29587149836056 && latitude < 36.29810626657537 && longitude > 127.24439786853941 && longitude < 127.24660123252899)
+                {
+                    tv_nowBusStop.setText(str_BusStop[2]);
+                    tv_nextBusStop.setText(str_BusStop[3]);
+                }
+
+                // 초록델리
+                if (latitude > 36.298889958335906 && latitude < 36.30027320317462 && longitude > 127.24057783992201 && longitude < 127.24297161750992)
+                {
+                    tv_nowBusStop.setText(str_BusStop[3]);
+                    tv_nextBusStop.setText(str_BusStop[4]);
+                }
+
+                // 계룡보건소
+                if (latitude > 36.272648794938554 && latitude < 36.27609576412544 && longitude > 127.2502807247227 && longitude < 127.25287254422494)
+                {
+                    tv_nowBusStop.setText(str_BusStop[4]);
+                    tv_nextBusStop.setText(str_BusStop[5]);
+                }
+
+                // 금암주공
+                if (latitude > 36.2695538124909 && latitude < 36.27115832697241 && longitude > 127.25594717466116 && longitude < 127.25807323621505)
+                {
+                    tv_nowBusStop.setText(str_BusStop[5]);
+                    tv_nextBusStop.setText(str_BusStop[6]);
+                }
+
+                // 포스코더샵
+                if (latitude > 36.26693223273362 && latitude < 36.26836048257562 && longitude > 127.26858245772526 && longitude < 127.27096776197816)
+                {
+                    tv_nowBusStop.setText(str_BusStop[6]);
+                    tv_nextBusStop.setText(str_BusStop[7]);
+                }
+
+                // 진잠4거리
+                if (latitude > 36.29647905663716 && latitude < 36.299236438961955 && longitude > 127.3216040483835 && longitude < 127.3248416539996)
+                {
+                    tv_nowBusStop.setText(str_BusStop[7]);
+                    tv_nextBusStop.setText(str_BusStop[8]);
+                }
+
+                // 구봉마을
+                if (latitude > 36.29585047882696 && latitude < 36.29686419146813 && longitude > 127.32951982582219 && longitude < 127.33199111619815)
+                {
+                    tv_nowBusStop.setText(str_BusStop[8]);
+                    tv_nextBusStop.setText(str_BusStop[9]);
+                }
+
+                // 관저2동
+                if (latitude > 36.2959136077344 && latitude < 36.297409758531984 && longitude > 127.33340141407417 && longitude < 127.33522136260217)
+                {
+                    tv_nowBusStop.setText(str_BusStop[9]);
+                    tv_nextBusStop.setText(str_BusStop[10]);
+                }
+
+                // KT 건너
+                if (latitude > 36.301294876508294 && latitude < 36.30267373345173 && longitude > 127.33493804373889 && longitude < 127.34058402070684)
+                {
+                    tv_nowBusStop.setText(str_BusStop[10]);
+                    tv_nextBusStop.setText(str_BusStop[11]);
+                }
+
+                // 느리울
+                if (latitude > 36.30202158588587 && latitude < 36.30358112484293 && longitude > 127.34071319134948 && longitude < 127.34411098236747)
+                {
+                    tv_nowBusStop.setText(str_BusStop[11]);
+                    tv_nextBusStop.setText(str_BusStop[12]);
+                }
+
+                // 가수원
+                if (latitude > 36.303002522672706 && latitude < 36.30436380845672 && longitude > 127.34421304497012 && longitude < 127.34741029000241)
+                {
+                    tv_nowBusStop.setText(str_BusStop[12]);
+                    tv_nextBusStop.setText(str_BusStop[13]);
+                }
+
+                // 목원대학교
+                if (latitude > 36.31977899352905 && latitude < 36.32962177787277 && longitude > 127.33637642545834 && longitude < 127.341101031621)
+                {
+                    tv_nowBusStop.setText(str_BusStop[13]);
                     tv_nextBusStop.setText("종점");
                 }
                 break;
@@ -881,7 +982,93 @@ public class BusStopInformationActivity extends AppCompatActivity implements OnM
                     tv_nowBusStop.setText(str_BusStop[11]);
                     tv_nextBusStop.setText("종점");
                 }
+                break;
 
+            case "하교버스2번" :
+                // 신학대학
+                if (latitude > 36.31977899352905 && latitude < 36.32962177787277 && longitude > 127.33637642545834 && longitude < 127.341101031621)
+                {
+                    tv_nowBusStop.setText(str_BusStop[0]);
+                    tv_nextBusStop.setText(str_BusStop[1]);
+                }
+
+                // 유성온천
+                if (latitude > 36.348499812831385 && latitude < 36.35507697820424 && longitude > 127.33834200629717 && longitude < 127.34357550038057)
+                {
+                    tv_nowBusStop.setText(str_BusStop[1]);
+                    tv_nextBusStop.setText(str_BusStop[2]);
+                }
+
+                // 선화교회
+                if (latitude > 36.349875164760725 && latitude < 36.35432917589731 && longitude > 127.35180446468168 && longitude < 127.35913843193848)
+                {
+                    tv_nowBusStop.setText(str_BusStop[2]);
+                    tv_nextBusStop.setText(str_BusStop[3]);
+                }
+
+                // 대전일보
+                if (latitude > 36.35300253710957 && latitude < 36.35556258316978 && longitude > 127.36148473646635 && longitude < 127.36509475827408)
+                {
+                    tv_nowBusStop.setText(str_BusStop[3]);
+                    tv_nextBusStop.setText(str_BusStop[4]);
+                }
+
+                // 안호영
+                if (latitude > 36.35248311094752 && latitude < 36.354402413772256 && longitude > 127.36553588026418 && longitude < 127.3693450331199)
+                {
+                    tv_nowBusStop.setText(str_BusStop[4]);
+                    tv_nextBusStop.setText(str_BusStop[5]);
+                }
+
+                // 큰마을4거리
+                if (latitude > 36.34825975133181 && latitude < 36.35071904559373 && longitude > 127.37418550543393 && longitude < 127.37749058219472)
+                {
+                    tv_nowBusStop.setText(str_BusStop[5]);
+                    tv_nextBusStop.setText(str_BusStop[6]);
+                }
+
+                // 롯데백화점
+                if (latitude > 36.33982988625053 && latitude < 36.34265048500787 && longitude > 127.38711129643842 && longitude < 127.3907532532545)
+                {
+                    tv_nowBusStop.setText(str_BusStop[6]);
+                    tv_nextBusStop.setText(str_BusStop[7]);
+                }
+
+                // 용문동
+                if (latitude > 36.335956970994204 && latitude < 36.3389846525829 && longitude > 127.3922968733207 && longitude < 127.39579419042532)
+                {
+                    tv_nowBusStop.setText(str_BusStop[7]);
+                    tv_nextBusStop.setText(str_BusStop[8]);
+                }
+
+                // 목동 금호한사랑
+                if (latitude > 36.33085239269713 && latitude < 36.33376337078349 && longitude > 127.40983107640706 && longitude < 127.41321659481322)
+                {
+                    tv_nowBusStop.setText(str_BusStop[8]);
+                    tv_nextBusStop.setText(str_BusStop[9]);
+                }
+
+                // 대전복합터미널
+                if (latitude > 36.347529498425544 && latitude < 36.3496484313238 && longitude > 127.43193687530893 && longitude < 127.4365999663355)
+                {
+                    tv_nowBusStop.setText(str_BusStop[9]);
+                    tv_nextBusStop.setText(str_BusStop[10]);
+                }
+
+                // 동춘당
+                if (latitude > 36.362995000790015 && latitude < 36.36577067250585 && longitude > 127.43914498848889 && longitude < 127.44224321164737)
+                {
+                    tv_nowBusStop.setText(str_BusStop[10]);
+                    tv_nextBusStop.setText(str_BusStop[11]);
+                }
+
+                // 법동 우체국 앞
+                if (latitude > 36.366346058658486 && latitude < 36.36809461659009 && longitude > 127.42995660965296 && longitude < 127.43345831226227)
+                {
+                    tv_nowBusStop.setText(str_BusStop[11]);
+                    tv_nextBusStop.setText("종점");
+                }
+                break;
 
             case "테스트1번" :
                 // 동신빌라
